@@ -8,29 +8,30 @@
       function btnClick() {
         let txt1 = "";
         let txt2 = "";
-        txt1 = document.test.bt.value;
-        txt2 = document.test.bt.name;
-        document.getElementById("ex1").innerHTML =
-          "<hr>" +
-          "Ви натиснули кнопку: " +
-          txt1.bold() +
-          " з ім'ям " +
-          txt2.bold() +
-          "<hr>";
+        txt1 = document.getElementById("n1");
+        txt2 = document.getElementById("n2");
+        let temp = txt1.value;
+        txt1.value = txt2.value;
+        txt2.value = temp;
       }
     </script>
   </head>
   <body>
-    <h1>Натискання кнопки</h1>
-    <div id="ex1"></div>
-    <form name="test">
+    <form class="form" name="test">
       <input
         type="button"
         name="bt"
-        value="Клацни тут"
+        value="Нажми на меня"
         onclick="btnClick()"
         ;
       />
     </form>
+    <input type="text" id="n1" />
+    <input type="text" id="n2" />
+    <style>
+      .form {
+        display: inline-block;
+      }
+    </style>
   </body>
 </html>
